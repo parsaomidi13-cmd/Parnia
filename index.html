@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>برای پرنیا ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #f7f3e9;
+  --green: #46594a;
+  --gold: #b99a62;
+  --ink: #28352d;
+  --muted: #7d8377;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Vazirmatn', sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(70,89,74,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70,89,74,.035) 1px, transparent 1px),
+    var(--cream);
+  background-size: 28px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  overflow-x: hidden;
+}
+
+.page {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+}
+
+.frame {
+  position: absolute;
+  inset: -10px;
+  border: 1px solid rgba(185,154,98,.45);
+  pointer-events: none;
+}
+
+.frame::before, .frame::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: var(--gold);
+  border-style: solid;
+}
+
+.frame::before {
+  top: -1px; right: -1px;
+  border-width: 2px 2px 0 0;
+}
+
+.frame::after {
+  bottom: -1px; left: -1px;
+  border-width: 0 0 2px 2px;
+}
+
+.panel {
+  background: rgba(255,253,247,.92);
+  border: 1px solid #ded8c9;
+  padding: 34px 25px;
+  text-align: center;
+  box-shadow: 0 18px 55px rgba(50,60,45,.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.small-label {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.arch {
+  width: 104px;
+  height: 120px;
+  border: 1px solid var(--gold);
+  border-bottom: none;
+  border-radius: 55px 55px 0 0;
+  margin: 0 auto 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.arch::before {
+  content: "";
+  position: absolute;
+  width: 82px;
+  height: 98px;
+  border: 1px solid rgba(70,89,74,.35);
+  border-bottom: none;
+  border-radius: 45px 45px 0 0;
+  bottom: 0;
+}
+
+.arch span {
+  font-size: 34px;
+  color: var(--green);
+  z-index: 1;
+}
+
+h1 {
+  font-size: 35px;
+  margin: 0 0 9px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 2;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 25px 0;
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.rule::before, .rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ded6c5;
+}
+
+.gift-area {
+  margin: 24px 0 14px;
+}
+
+.gift {
+  width: 112px;
+  height: 92px;
+  margin: auto;
+  position: relative;
+  cursor: pointer;
+  transition: transform .25s ease;
+  animation: float 2.8s ease-in-out infinite;
+}
+
+.gift:hover { transform: translateY(-5px) rotate(-2deg); }
+
+.box {
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  width: 96px;
+  height: 64px;
+  background: var(--green);
+  border: 1px solid #344438;
+  border-radius: 3px;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  left: 38px;
+  top: 0;
+  width: 18px;
+  height: 100%;
+  background: #c8ae78;
+}
+
+.lid {
+  position: absolute;
+  top: 19px;
+  left: 2px;
+  width: 108px;
+  height: 19px;
+  background: #5d715f;
+  border: 1px solid #344438;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.lid::before {
+  content: "";
+  position: absolute;
+  left: 44px;
+  top: 0;
+  width: 18px;
+  height: 100%;
+  background: #d4ba83;
+}
+
+.bow {
+  position: absolute;
+  top: 0;
+  left: 42px;
+  width: 30px;
+  height: 23px;
+  border: 5px solid var(--gold);
+  border-radius: 50% 50% 10% 50%;
+  transform: rotate(-20deg);
+  z-index: 3;
+}
+
+.bow::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 20px;
+  border: 5px solid var(--gold);
+  border-radius: 50% 50% 50% 10%;
+  left: 9px;
+  top: -4px;
+  transform: rotate(42deg);
+}
+
+.tap {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+#message {
+  display: none;
+  animation: appear .8s ease both;
+}
+
+#message h2 {
+  font-size: 25px;
+  color: var(--green);
+  margin: 0 0 20px;
+}
+
+.message-text {
+  text-align: right;
+  font-size: 13px;
+  line-height: 2.5;
+  color: #4c554c;
+  font-weight: 300;
+}
+
+.message-text p { margin: 0 0 15px; }
+
+.signature {
+  border-top: 1px solid #e2dac9;
+  padding-top: 19px;
+  margin-top: 22px;
+  color: var(--green);
+  font-size: 13px;
+  line-height: 2.2;
+}
+
+.signature span {
+  color: var(--gold);
+  font-size: 18px;
+}
+
+.footer {
+  margin-top: 22px;
+  color: #9a9b8f;
+  font-size: 10px;
+  letter-spacing: .5px;
+}
+
+.spark {
+  position: fixed;
+  pointer-events: none;
+  animation: rise 1.8s ease-out forwards;
+  z-index: 10;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rise {
+  0% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+  100% { opacity: 0; transform: translateY(-100px) rotate(30deg) scale(.5); }
+}
+
+@media(max-width: 380px) {
+  .panel { padding: 28px 19px; }
+  h1 { font-size: 31px; }
+  .message-text { font-size: 12px; }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+  <div class="frame"></div>
+
+  <main class="panel" id="panel">
+    <section id="intro">
+      <div class="small-label">A LITTLE SOMETHING FOR YOU</div>
+
+      <div class="arch">
+        <span>✳</span>
+      </div>
+
+      <h1>پرنیا</h1>
+      <div class="subtitle">
+        برای شروع یک فصل تازه،<br>
+        یه سورپرایز کوچیک آماده شده...
+      </div>
+
+      <div class="rule">13 · 84</div>
+
+      <div class="gift-area">
+        <div class="gift" onclick="openGift()" aria-label="باز کردن هدیه">
+          <div class="bow"></div>
+          <div class="lid"></div>
+          <div class="box"></div>
+        </div>
+      </div>
+
+      <div class="tap">روی هدیه بزن تا باز بشه</div>
+    </section>
+
+    <section id="message">
+      <div class="small-label">A NEW CHAPTER BEGINS</div>
+
+      <div class="arch">
+        <span>✧</span>
+      </div>
+
+      <h2>تولدت مبارک پرنیا 🌿</h2>
+
+      <div class="message-text">
+        <p>
+          امیدوارم سال جدید زندگیت پر از اتفاقای خوب،
+          تجربه‌های تازه و لحظه‌هایی باشه که بعداً با لبخند بهشون فکر کنی.
+        </p>
+
+        <p>
+          امیدوارم توی دانشگاه و مسیر طراحی ساختمان،
+          ایده‌هات کم‌کم شکل واقعی بگیرن و چیزایی که توی ذهنت می‌سازی،
+          یکی‌یکی راهشون رو به دنیای واقعی پیدا کنن.
+        </p>
+
+        <p>
+          امیدوارم این سال برات پر از فرصت‌های خوب،
+          آدمای ارزشمند و موفقیت‌هایی باشه که واقعاً خوشحالت می‌کنن.
+          از اون سال‌هایی که آخرش حس کنی کلی چیز خوب به زندگیت اضافه شده.
+        </p>
+
+        <p>
+          و البته امیدوارم بین همه‌ی برنامه‌ها و دغدغه‌ها،
+          وقت برای خوش گذروندن و ساختن خاطره‌های قشنگ هم پیدا کنی.
+        </p>
+      </div>
+
+      <div class="signature">
+        به امید یه سال قشنگ‌تر،<br>
+        پر از اتفاقای خوب و شروع‌های تازه
+        <br>
+        <span>✳ ✧ ✳</span>
+      </div>
+    </section>
+
+    <div class="footer">DESIGNED WITH A LITTLE THOUGHT · FOR PARNIA</div>
+  </main>
+</div>
+
+<script>
+function openGift() {
+  document.getElementById('intro').style.display = 'none';
+  document.getElementById('message').style.display = 'block';
+
+  const symbols = ['✦', '✧', '✳', '❋', '·'];
+
+  for (let i = 0; i < 24; i++) {
+    const particle = document.createElement('span');
+    particle.className = 'spark';
+    particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.top = (35 + Math.random() * 40) + 'vh';
+    particle.style.fontSize = (12 + Math.random() * 15) + 'px';
+    particle.style.color = ['#b99a62', '#46594a', '#9caa91'][Math.floor(Math.random() * 3)];
+    document.body.appendChild(particle);
+
+    setTimeout(() => particle.remove(), 1900);
+  }
+}
+</script>
+</body>
+</html>
